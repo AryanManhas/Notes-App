@@ -22,7 +22,16 @@ app.post("/", (req, res)=>
         res.render("index" , {files : files}); //we use res.render when we need to render ejs pages ande index in views
     })
 })
+
 app.post("/create", (req, res)=>
+{
+    fs.writeFile(`./files/${req.body.title.split(" ").join("")}.txt`, req.body.details , (err)=>{
+        res.redirect("/")
+    });
+    
+})
+
+app.post("/filename:/filename", (req, res)=>
 {
     fs.writeFile(`./files/${req.body.title.split(" ").join("")}.txt`, req.body.details , (err)=>{
         res.redirect("/")
