@@ -28,14 +28,11 @@ app.post("/create", (req, res)=>
     fs.writeFile(`./files/${req.body.title.split(" ").join("")}.txt`, req.body.details , (err)=>{
         res.redirect("/")
     });
-    
-})
 
-app.post("/filename:/filename", (req, res)=>
+app.post("/edit/:filename", (req, res)=>
 {
-    fs.writeFile(`./files/${req.body.title.split(" ").join("")}.txt`, req.body.details , (err)=>{
-        res.redirect("/")
-    });
+        res.render("edit")
+    });    
     
 })
 
