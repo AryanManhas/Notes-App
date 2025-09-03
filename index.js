@@ -19,7 +19,7 @@ app.get("/", (req, res)=>
 app.post("/", (req, res)=>
 {
     fs.readdir(`./files` , (err , files)=>{
-        res.render("index" , {files : files}); //we use res.render when we need to render ejs pages ande index in views
+        res.render("index" , {files : files}); //we use res.render when we need to render ejs pages ande index in views right files is the data in file folder and left is the varible to access that file
     })
 })
 
